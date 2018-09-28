@@ -31,4 +31,4 @@ class UserForm(forms.Form):
     MultipleChoiceField = forms.MultipleChoiceField(choices=((1, "English"), (2, "German"), (3, "French")), widget=forms.CheckboxSelectMultiple)
     TypedMultipleChoiceField = forms.TypedMultipleChoiceField(choices=((1, "English"), (2, "German"), (3, "French")))
 
-    field_order = ["age", "name"]
+    field_order = ["age", "name", 'EmailField']
