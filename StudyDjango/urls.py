@@ -21,6 +21,9 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('about/', TemplateView.as_view(template_name='about.html', extra_context={'header': 'О сайте'})),
-    path('contact/', views.index),
-    path('', TemplateView.as_view(template_name='index.html')),
+    path('', views.index),
+    # path('', TemplateView.as_view(template_name='index.html')),
+    path('edit/<int:id>/', views.edit),
+    path('delete/<int:id>/', views.delete),
+    path('create/', views.create)
 ]

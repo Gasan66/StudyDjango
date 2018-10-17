@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'StudyDjango.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'foo',
+        'USER': 'admin',
+        'PASSWORD': 'Qwaszx!2',
+        'HOST': '100.124.7.179',
+        'PORT': '3306',
     }
 }
 

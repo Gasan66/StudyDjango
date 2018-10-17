@@ -1,3 +1,28 @@
 {% extends "base.html" %}
-{% block title %}Index{% endblock title %}
-{% block header %}Главная{% endblock header %}
+{% block title %}Модели в Django{% endblock title %}
+{% block content %}
+
+<body class="container">
+    <form method="POST" action="create/">
+        {% csrf_token %}
+        <p>
+            <label>Введите название фирмы</label><br>
+            <input type="text" name="name" />
+        </p>
+        <input type="submit" value="Добавить" >
+    </form>
+    {% if companies.count > 0 %}
+    <h2>Список пользователей</h2>
+    <table>
+        <tr><th>Название</th></tr>
+        {% for company in companies %}
+        <tr>
+            <td>{{ company.name }}</td>
+            <td><a href="edit/{{company.id}}">Изменить</a> | <a href="delete/{{company.id}}">Удалить</a>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+
+{% endblock content %}

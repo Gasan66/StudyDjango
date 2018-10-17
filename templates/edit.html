@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модели в Django</title>
+</head>
+<body class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Введите название продукта</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите цену продукта</label><br>
+            <input type="number" name="price" />
+        </p>
+        <input type="submit" value="Добавить" >
+    </form>
+</body>
+</html>
